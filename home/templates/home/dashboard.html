@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 
 {% block start %}
-    <b>This is Dashboard Page</b>
+  <h3>Courses:{{NoOfCourse}}</h3>
+  <table class="container">
+      <tr >
+        <th>ID</th>
+        <th>Course Name</th>
+        <th>Ratings</th>
+        <th>Marks</th>
+      </tr>
+      {%for row in CourseData %}
+      <tr>
+        <td>{{row.ID}}</td>
+        <td>{{row.COURSE}}</td>
+        <td>{{row.RATINGS}}</td>
+        <td>{{row.MARKS}}</td>
+      </tr>
+      
+      {%endfor%}
+  </table>
+
 {% endblock start %}
