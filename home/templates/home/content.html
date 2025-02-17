@@ -3,4 +3,10 @@
 
 {% block start %}
     <b>This is Content Page</b>
+
+
+    {% autoescape on %}
+    {{ body }}
+    {% endautoescape %}
+    
 {% endblock start %}
