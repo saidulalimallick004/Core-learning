@@ -9,7 +9,8 @@ class students(models.Model):
     Email=models.EmailField()
     Add=models.TextField(null=True,blank=True)
     
-    
+    def __str__(self)->str:
+        return self.Name
     
 
 class course(models.Model):
@@ -17,10 +18,14 @@ class course(models.Model):
     CourseName=models.CharField(max_length=50)
     FileNotes=models.FileField(null=True)
     
+    def __str__(self) ->str:
+        return self.CourseId
+    
     
 class cars(models.Model):
     Name=models.CharField(max_length=10)
     Color=models.TextField()
     
-    
+    def __str__(self)->str:
+        return self.Name
     
