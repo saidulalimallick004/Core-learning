@@ -42,20 +42,33 @@
 </head>
 <body class="mt-4">
   <header>
-    <center><h1 class="mt-4">View All Stored Recipe</h1></center>
+    <center><h1 class="mt-4">View All Stored Recipe</h1>
+      {%if message%}
+
+      <p> {{message}}</p>
+
+      {%endif%}</center>
   </header>
+
+  <center><a href="/recipe/"><button type="button" class="btn btn-success"> Add Recipes</button></a></center>
     
     <main style="display: flex;">
+
       <div class="container mt-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
         {%for card in all_Recipe %}
         <div class="col-md-4">
           <div class="card shadow-sm">
-              <img src="{{ card.R_Image }}" class="card-img-top" alt="{{ card.Name }}">
+              <img src='/media/{{card.R_Image}}' class="card-img-top" alt="{{ card.Name }}">
               <div class="card-body">
                   <h5 class="card-title">{{forloop.counter}}. {{ card.Name }}</h5>
                   <p class="card-text">{{ card.Descriptions }}</p>
               </div>
+
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="/edit_recipe/{{card.id}}" class="btn btn-primary ">Edit</a>
+                <a href="/delete_recipe/{{card.id}}" class="btn btn-danger">Delete</a>
+            </div>
           </div>
       </div>
       

@@ -17,17 +17,17 @@
             
             <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
                 {%csrf_token%}
-                <h2>Add Recipe</h2>
+                <h2>Update Recipe</h2>
                 <hr>
                 
                 <div class="mb-3">
                     <label for="forRecipeName" class="form-label">Recipe Name: </label>
-                    <input name="Name" required type="text" class="form-control" placeholder="Recipe Name" id="">
+                    <input name="Name" type="text" value="{{recipe.Name}}" class="form-control" placeholder="Recipe Name" id="">
                 </div>
                 
                 <div class="mb-3">
                     <label for="forRecipeDescription" class="form-label">Recipe Description: </label>
-                    <textarea name="Description" required class="form-control" id=""></textarea>
+                    <textarea name="Descriptions" class="form-control" id="">{{recipe.Descriptions}}</textarea>
                 </div>
                 
 
