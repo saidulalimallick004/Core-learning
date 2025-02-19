@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 # Create your views here.
 def recipes(request):
@@ -18,12 +18,21 @@ def recipes(request):
         except:
             
             print("Something went wrong!!!")
-        
-        
-        
-    
-        
-    
-    
+            
+        return redirect('/recipe/')
     
     return render(request, 'new_recipe.html')
+
+
+
+def view_recipes(request):
+    
+    all_Recipe=recipe.objects.all()
+    
+    context={
+        'all_Recipe': all_Recipe
+        
+    }
+    
+    return render(request,'view_recipe.html',context)
+    
