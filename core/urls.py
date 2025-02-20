@@ -39,7 +39,11 @@ urlpatterns = [
     path('recipe/',recipes,name="recipe"),
     path('view_recipe/',view_recipes,name="view_recipe"),
     path('edit_recipe/<id>',edit_recipe,name="edit_recipe"),
-    path('delete_recipe/<id>',delete_recipe,name="delete_recipe")
+    path('delete_recipe/<id>',delete_recipe,name="delete_recipe"),
+    
+    
+    path('login_page/',login_page,name='login_page'),
+    path('registration_page/',registration_page,name='register_page')
     
 ]
 

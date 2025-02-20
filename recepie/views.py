@@ -99,3 +99,21 @@ def edit_recipe(request,id):
     
     
     return render(request, 'edit_recipe.html',context)
+
+
+
+
+
+def login_page(request):
+    
+    
+    return render(request,'login_page.html')
+
+
+
+
+
+def registration_page(request):
+    
+    
+    return render(request,'registration_page.html')
